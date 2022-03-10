@@ -18,13 +18,12 @@
         }
 
         .navBar {
-            position: absolute;
+            position: fixed;
             padding-top: 1%;
             padding-bottom: 1.6%;
             padding-left: 8%;
             padding-right: 8%;
-            opacity: 87%;
-            background-color: white;
+            background-color: rgb(255, 255, 255, 0.87);
             left: 0;
             right: 0;
         }
@@ -40,23 +39,19 @@
         li.titulo {
             float: left;
         }
-        
+
         li.titulo a {
             font-size: 35px;
             color: #2948c5;
-            font-weight: 630;
+            font-weight: 670;
             padding: 8px;
             margin: 0;
+            pointer-events: none;
         }
 
         li a:hover {
-            background-color: #cfcfcf;
+            background-color: rgb(207, 207, 207);
             cursor: pointer;
-        }
-
-        li.titulo a:hover {
-            background-color: white;
-            cursor: default;
         }
 
         li a.button:hover {
@@ -67,8 +62,7 @@
             display: block;
             padding: 8px;
             color: #6f7686;
-            background-color: white;
-            font-weight: 630;
+            font-weight: 640;
             border-radius: 3px;
             padding-top: 10px;
             padding-bottom: 10px;
@@ -87,7 +81,293 @@
             margin-top: 0;
             font-weight: 630;
             box-shadow: 0px 5px 7px #999999;
-            opacity: 100%;
+            border-radius: 3px;
+        }
+
+        .button:hover {
+            cursor: pointer;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .textBox {
+            padding-left: 10%;
+            padding-right: 10%;
+        }
+
+        .title.big {
+            font-size: 60px;
+        }
+
+        .text {
+            margin-top: 2rem;
+            font-size: 20px;
+            line-height: 1.8rem;
+            word-spacing: 0.5rem;
+            font-weight: 500;
+            color: #7d838b;
+        }
+
+        .title {
+            color: #142777;
+            font-weight: 650;
+            font-size: 40px;
+        }
+
+        .content.vaccines_banner {
+            justify-content: center;
+            margin-top: 4%;
+            margin-bottom: 4%;
+        }
+
+        .content.cards {
+            justify-content: center;
+            margin-top: 4%;
+            margin-bottom: 4%;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            height: 240px;
+            border: 2.8px solid #eeeeee8e;
+            border-radius: 10px;
+            width: 14%;
+            margin-left: 10px;
+            margin-right: 10px;
+            padding: 35px;
+        }
+
+        .card .title {
+            font-size: 20px;
+            text-transform: uppercase;
+        }
+
+        .card .text {
+            font-size: 16px;
+            line-height: 1.5rem;
+            word-spacing: 0.3rem;
+        }
+
+        .card:hover {
+            border: transparent;
+            box-shadow: 0px 2px 20px #eeeeee;
+        }
+
+        .imgWBackground {
+            height: 720px;
+            width: 45%;
+            background-color: #2948c5;
+        }
+
+        .textBox .content {
+            margin-bottom: 1rem;
+        }
+
+        .expandBox {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: left;
+            height: fit-content;
+            width: 80%;
+            border: 2.8px solid #eeeeee8e;
+            border-radius: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+            padding: 23px;
+            padding-top: 13px;
+            padding-bottom: 13px;
+        }
+
+        .expandBox .title {
+            font-size: 18px;
+            font-weight: 590;
+            color: #19275f;
+            width: 86%;
+            padding-top: 1%;
+            padding-bottom: 1%;
+            margin-left: 4%;
+        }
+
+        .expandBox .text {
+            font-size: 16px;
+            line-height: 1.5rem;
+            word-spacing: 0.3rem;
+            margin-top: 1rem;
+            padding-left: 3rem;
+            padding-right: 3rem;
+        }
+
+        .cuadrado {
+            width: 30px;
+            height: 30px;
+        }
+
+        .cuadrado.pequeno {
+            width: 20px;
+            height: 20px;
+            margin-top: 0.5%;
+            margin-bottom: 0.5%;
+        }
+
+        .cuadrado.grande {
+            width: 50px;
+            height: 50px;
+            margin-top: 0.5%;
+            margin-bottom: 0.5%;
+        }
+
+        .cuadrado.redondeado {
+            border-radius: 6px;
+        }
+
+        .cuadrado.redondeado.pequeno {
+            border-radius: 3px;
+        }
+
+        .cuadrado.redondeado.grande {
+            border-radius: 6px;
+        }
+
+        .azul {
+            background-color: rgb(41, 72, 197, 0.5);
+        }
+
+        .azul.pequeno {
+            background-color: rgb(41, 72, 197, 00.3);
+        }
+
+        .azul.grande {
+            background-color: rgba(65, 94, 207, 0.3);
+        }
+
+        .triangulo {
+            width: 0;
+            height: 0;
+            margin: auto;
+            margin-top: 4px;
+            border: 0px;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-top: 11px solid #2948c5;
+            border-radius: 1px;
+        }
+
+        .content.expandBox:hover {
+            box-shadow: 0px 0px 8px #dddddd69;
+        }
+
+        .content.expandBox:hover .triangulo {
+            width: 0;
+            height: 0;
+            margin: auto;
+            margin-top: 4px;
+            border: 0px;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-bottom: 11px solid #2948c5;
+            border-radius: 1px;
+        }
+
+        .oculto {
+            display: none;
+        }
+
+        .content.expandBox:hover .oculto {
+            display: block;
+        }
+
+        .contactCard {
+            display: flex;
+            flex-direction: column;
+            height: 155px;
+            width: 179px;
+            border: 2.8px solid #eeeeee8e;
+            border-radius: 10px;
+            /* margin-left: 5px;
+            margin-right: 5px; */
+            margin-bottom: 50px;
+            padding: 35px;
+            justify-content: space-between;
+        }
+
+        .contactCard .content {
+            justify-content: left;
+        }
+
+        .contact {
+            color: #142777;
+            font-size: 20px;
+            font-weight: 500;
+            padding-left: 1rem;
+        }
+
+        .contact.info {
+            color: #7d838b;
+            font-size: 15px;
+            margin-top: 0.3rem;
+        }
+
+        .contactCard:hover {
+            box-shadow: 0px 0px 15px #e6e2e288;
+        }
+
+        .contactCard .button {
+            background-color: rgba(109, 130, 214, 0.219);
+            color: #223fb4d7;
+        }
+
+        .contactCard:hover .button {
+            background-color: #2948c5;
+            color: white;
+        }
+
+        .contactCard:hover .cuadrado.grande {
+            box-shadow: 0px 2px 20px 10px #bebebe24;
+            border: 3px solid white;
+            border-radius: 10px;
+        }
+
+        .footer {
+            background-color: #eff3ff;
+            margin-top: 160px;
+            padding-top: 60px;
+            padding-bottom: 35px;
+            padding-left: 100px;
+            padding-right: 100px;
+        }
+
+        .column {
+            flex-direction: column;
+            padding-right: 1rem;
+            justify-content: flex-start;
+        }
+
+        .footer .title {
+            font-size: 22px;
+            margin-bottom: 1.3rem;
+        }
+
+        .footer .title.uno {
+            color: #2948c5;
+        }
+
+        .footer .text {
+            margin-top: 0;
+            font-size: 18px;
+        }
+
+        .text.options {
+            margin-bottom: 0.2rem;
+        }
+
+        .text.options:hover {
+            cursor: pointer;
         }
     </style>
     <div class="navBar">
@@ -100,9 +380,236 @@
             <li><a>Database</a></li>
         </ul>
     </div>
-    <div></div>
-    <img src="imgs/front-view-female-nurse-white-medical-suit-with-red-mask-injection-her-hands-blue.jpeg"
-        style="height: 850px; width: 50%; float: right; object-fit: cover;">
+    <div class="content">
+        <div class="textBox" style="padding-top: 16%;">
+            <div class="title big"> Fight Virus With Vaccines </div>
+            <div class="text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt modi reprehenderit,
+                officia maxime quam iste expedita, laudantium consequatur dolorum suscipit.</div>
+        </div>
+
+        <img class="personImg"
+            src="imgs/front-view-female-nurse-white-medical-suit-with-red-mask-injection-her-hands-blue.jpeg"
+            style="height: 980px; width: 49%;        object-fit: cover;">
+    </div>
+    <div class="content vaccines_banner">
+        <img src="imgs/Captura de Pantalla 2022-03-10 a la(s) 3.32.59 a.m..png" style="width: 83%;">
+    </div>
+    <div class="content">
+        <div class="textBox">
+            <div class="title">
+                Why should I vaccine?
+            </div>
+            <div class="text" style="padding-right: 60%;">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur odio ex, quam minima iste culpa
+                eaque cupiditate fugiat sequi corporis
+            </div>
+        </div>
+    </div>
+    <div class="content cards">
+        <div class="card">
+            <div class="title">
+                Lorem ipsum dolor
+            </div>
+            <div class="text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, earum. Ducimus, vel voluptatum cumque.
+            </div>
+        </div>
+        <div class="card">
+            <div class="title">
+                Lorem ipsum dolor
+            </div>
+            <div class="text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, earum.
+            </div>
+        </div>
+        <div class="card">
+            <div class="title">
+                Lorem ipsum dolor
+            </div>
+            <div class="text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, earum. Ducimus, vel voluptatum cumque.
+            </div>
+        </div>
+        <div class="card">
+            <div class="title">
+                Lorem ipsum dolor
+            </div>
+            <div class="text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, earum.
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="imgWBackground">
+            <img src="imgs/front-view-young-woman-sterile-mask-yellow-wall.png"
+                style="height: 100%; width: 100%; object-fit: cover;">
+        </div>
+        <div class="textBox" style="width: 50%; padding-left: 5%;">
+            <div class="title">Preparations Before Vaccine</div>
+            <div class="text" style="margin-bottom: 2.5rem;">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Officiis soluta perferendis
+                distinctio ex animi cupiditate odit qui accusantium laboriosam excepturi, minus nihil voluptates,
+                dolore
+                enim! Minima facilis suscipit labore amet?</div>
+            <div class="content expandBox">
+                <div class="cuadrado redondeado azul"></div>
+                <div class="title">
+                    Lorem ipsum dolor
+                </div>
+                <div class="cuadrado redondeado azul pequeno">
+                    <div class="triangulo"></div>
+                </div>
+                <div class="text oculto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum quibusdam
+                    animi
+                    blanditiis. Repellat, officiis non vel est magnam.</div>
+            </div>
+            <div class="content expandBox">
+                <div class="cuadrado redondeado azul"></div>
+                <div class="title">
+                    Lorem ipsum dolor
+                </div>
+                <div class="cuadrado redondeado azul pequeno">
+                    <div class="triangulo"></div>
+                </div>
+                <div class="text oculto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum quibusdam
+                    animi
+                    blanditiis. Repellat, officiis non vel est magnam.</div>
+            </div>
+            <div class="content expandBox">
+                <div class="cuadrado redondeado azul"></div>
+                <div class="title">
+                    Lorem ipsum dolor
+                </div>
+                <div class="cuadrado redondeado azul pequeno">
+                    <div class="triangulo"></div>
+                </div>
+                <div class="text oculto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum quibusdam
+                    animi
+                    blanditiis. Repellat, officiis non vel est magnam.</div>
+            </div>
+            <div class="content expandBox">
+                <div class="cuadrado redondeado azul"></div>
+                <div class="title">
+                    Lorem ipsum dolor
+                </div>
+                <div class="cuadrado redondeado azul pequeno">
+                    <div class="triangulo"></div>
+                </div>
+                <div class="text oculto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum quibusdam
+                    animi
+                    blanditiis. Repellat, officiis non vel est magnam.</div>
+            </div>
+            <div class="content expandBox">
+                <div class="cuadrado redondeado azul"></div>
+                <div class="title">
+                    Lorem ipsum dolor
+                </div>
+                <div class="cuadrado redondeado azul pequeno">
+                    <div class="triangulo"></div>
+                </div>
+                <div class="text oculto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum quibusdam
+                    animi
+                    blanditiis. Repellat, officiis non vel est magnam.</div>
+            </div>
+        </div>
+    </div>
+    <div class="content" style="margin-top: 100px;">
+        <div class="textBox" style="width: 50%; padding-right: 5%;">
+            <div class="title">Lorem ipsum dolor</div>
+            <div class="text" style="padding-right: 3.3rem; margin-bottom: 3rem;">Lorem ipsum dolor sit amet consectetur
+                adipisicing elit.
+                Aliquid aliquam cum cupiditate quae saepe itaque labore quaerat fugit eos. Similique voluptatem,
+                corporis natus ipsum temporibus quas unde nam in odit.</div>
+            <div class="content" style="flex-wrap: wrap; justify-content: space-around;">
+                <div class="contactCard">
+                    <div class="content">
+                        <div class="cuadrado grande redondeado azul"></div>
+                        <div style="flex-direction: column;">
+                            <div class="contact">Lorem ipsum</div>
+                            <div class="contact info">123.1234.1345</div>
+                        </div>
+                    </div>
+                    <div class="button">
+                        <center>
+                            Contact Now
+                        </center>
+                    </div>
+                </div>
+                <div class="contactCard">
+                    <div class="content">
+                        <div class="cuadrado grande redondeado azul"></div>
+                        <div style="flex-direction: column;">
+                            <div class="contact">Lorem ipsum</div>
+                            <div class="contact info">123.1234.1345</div>
+                        </div>
+                    </div>
+                    <div class="button">
+                        <center>
+                            Contact Now
+                        </center>
+                    </div>
+                </div>
+                <div class="contactCard">
+                    <div class="content">
+                        <div class="cuadrado grande redondeado azul"></div>
+                        <div style="flex-direction: column;">
+                            <div class="contact">Lorem ipsum</div>
+                            <div class="contact info">123.1234.1345</div>
+                        </div>
+                    </div>
+                    <div class="button">
+                        <center>
+                            Contact Now
+                        </center>
+                    </div>
+                </div>
+                <div class="contactCard">
+                    <div class="content">
+                        <div class="cuadrado grande redondeado azul"></div>
+                        <div style="flex-direction: column;">
+                            <div class="contact">Lorem ipsum</div>
+                            <div class="contact info">123.1234.1345</div>
+                        </div>
+                    </div>
+                    <div class="button">
+                        <center>
+                            Contact Now
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="imgWBackground" style="margin-top: 100px;">
+            <img src="imgs/portrait-man-doctor-using-cellphone.png"
+                style="height: 100%; width: 100%; object-fit: cover;">
+        </div>
+    </div>
+    <div class="footer">
+        <div class="content">
+            <div class="content column" style="width: 17%;">
+                <div class="title uno">Vaccination</div>
+                <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+            </div>
+            <div class="content column">
+                <div class="title">About</div>
+                <div class="text options">About Us</div>
+                <div class="text options">Features</div>
+                <div class="text options">News & Blog</div>
+            </div>
+            <div class="content column">
+                <div class="title">Company</div>
+                <div class="text options">How We Work?</div>
+                <div class="text options">Capital</div>
+                <div class="text options">Security</div>
+            </div>
+            <div class="content column">
+                <div class="title">Support</div>
+                <div class="text options">FAQs</div>
+                <div class="text options">Support Center</div>
+                <div class="text options">Contact Us</div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
