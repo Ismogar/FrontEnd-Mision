@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+</head>
+<style>
+    :root {
+        --pokedexL-left-radious: 60px;
+        --pokedexL-right-radious: 30px;
+        --pokedexR-radious: 30px;
+    }
+
+    body {
+        background-color: #b9eb6f;
+        font-family: system-ui;
+        color: white;
+        text-transform: uppercase;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: row;
+        margin-top: 10%;
+        margin-left: 15%;
+        margin-right: 15%;
+        height: 800px;
+        width: 1010px;
+    }
+
+    .pokedex {
+        box-sizing: border-box;
+        background-color: #f03939;
+        height: 100%;
+        width: 50%;
+        display: flex;
+        flex-direction: row;
+        border-color: #a12f2f;
+        border-style: solid;
+    }
+
+    .pokedex.left {
+        border-top-left-radius: var(--pokedexL-left-radious);
+        border-bottom-left-radius: var(--pokedexL-left-radious);
+
+        border-top-right-radius: var(--pokedexL-right-radious);
+        border-bottom-right-radius: var(--pokedexL-right-radious);
+
+        border-left-width: 15px;
+        border-bottom-width: 10px;
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pokedex.right {
+        border-top-right-radius: var(--pokedexR-radious);
+        border-bottom-right-radius: var(--pokedexR-radious);
+
+        margin-top: 11.9%;
+        height: 81%;
+        width: 45%;
+
+        border-left-width: 5px;
+        border-bottom-width: 6px;
+    }
+
+    .lent.small {
+        height: 40px;
+        width: 40px;
+    }
+
+    .lent {
+        border-radius: 50%;
+        background-color: white;
+        height: 90px;
+        width: 90px;
+        display: flow-root;
+    }
+
+    .lent div {
+        border-radius: 50%;
+        background-color: #50cafc;
+        height: 85%;
+        width: 85%;
+        margin-top: 7.5%;
+        margin-left: 7.5%;
+        display: flow-root;
+    }
+
+    .lent.red div {
+        background-color: #a12f2f;
+    }
+
+    .lent.yellow div {
+        background-color: #a1902f;
+    }
+
+    .lent div div {
+        background-color: #72deff;
+        height: 60%;
+        width: 60%;
+        margin-right: 15%;
+        display: flow-root;
+    }
+
+    .lent.red div div {
+        background-color: #f03939;
+    }
+
+    .lent.yellow div div {
+        background-color: #f0de39;
+    }
+
+    .lent div div div {
+        background-color: #ffffff;
+        height: 55%;
+        width: 55%;
+        margin-top: 2%;
+        display: flow-root;
+    }
+
+    .top {
+        padding-top: 10px;
+        padding-bottom: 8px;
+        padding-left: 15px;
+        display: flex;
+    }
+
+    .top .lent {
+        margin-right: 5px;
+    }
+
+    .pokemon {
+        height: 80%;
+        padding-top: 30px;
+
+        box-sizing: border-box;
+        border-top-style: solid;
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+        border-color: #a12f2f;
+        border-width: 12px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .pokemon .frame {
+        height: 65%;
+        width: fit-content;
+
+        box-sizing: border-box;
+
+        border-style: solid;
+        border-width: 10px;
+        border-radius: 10px;
+        background-color: #cecece;
+        border-color: #cecece;
+    }
+
+    .pokemon img {
+        background-color: #fffcdb;
+        border-radius: 10px;
+        height: 100%;
+    }
+
+    .pokemon .name {
+        width: 100%;
+        height: fit-content;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+
+        font-weight: 700;
+    }
+
+    .pokemon .name .data {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+        background-color: #a12f2f;
+
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    .pokemon .name .data input[type=text] {
+        border-color: #cecece;
+        margin-bottom: 5px;
+        border-radius: 10px;
+        background-color: #fffcdb;
+        border-style: solid;
+        text-align: center;
+    }
+
+    .pokemon .name input[type=button] {
+        border-radius: 50%;
+        width: 65.5px;
+        background-color: #fffcdb;
+        font-weight: 700;
+        border-style: solid;
+        box-shadow: 0 0 4px black;
+        padding: 0;
+    }
+
+    .pokemon .name input[type=button]:active {
+        background-color: #f3e97e;
+        box-shadow: 0 0 2px black;
+    }
+
+    .pokemon .name input[type=button]:hover {
+        cursor: pointer;
+    }
+
+    .log {
+        display: flex;
+        flex-direction: column;
+
+        width: 100%;
+
+        margin: 40px;
+        margin-right: 45px;
+        padding: 20px 15px;
+
+        background-color: #254238;
+
+        border-style: solid;
+        border-color: #0f3528;
+        border-width: 10px;
+        border-radius: 20px;
+    }
+
+    .log .output {
+        margin-bottom: 35px;
+    }
+
+    .log .output:last-child {
+        margin-bottom: 0px;
+    }
+
+    .output {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: start;
+        width: 100%;
+    }
+
+    .output * {
+        color: yellow;
+        font-weight: 700;
+    }
+
+    .output label[for="type"] {
+        margin-right: 25px;
+    }
+
+    .output #type {
+        border-style: solid;
+        border-radius: 10px;
+        border-width: 5px;
+
+        margin-right: 25px;
+        padding: 5px;
+
+        color: black;
+        font-weight: 700;
+    }
+
+    .output #type.normal {
+        border-color: #7e7d61;
+        background-color: #A8A77A;
+    }
+
+    .output #type.fighting {
+        border-color: #8d302d;
+        background-color: #C22E28;
+    }
+
+    .output #type.flying {
+        border-color: #8a7dad;
+        background-color: #A98FF3;
+    }
+
+    .output #type.poison {
+        border-color: #643563;
+        background-color: #A33EA1;
+    }
+
+    .output #type.ground {
+        border-color: #ac965e;
+        background-color: #E2BF65;
+    }
+
+    .output #type.rock {
+        border-color: #756a32;
+        background-color: #B6A136;
+    }
+
+    .output #type.bug {
+        border-color: #788323;
+        background-color: #A6B91A;
+    }
+
+    .output #type.ghost {
+        border-color: #5b4d6d;
+        background-color: #735797;
+    }
+
+    .output #type.steel {
+        border-color: #87878d;
+        background-color: #B7B7CE;
+    }
+
+    .output #type.fire {
+        border-color: #ad6d3b;
+        background-color: #EE8130;
+    }
+
+    .output #type.water {
+        border-color: #576e9e;
+        background-color: #6390F0;
+    }
+
+    .output #type.grass {
+        border-color: #60834c;
+        background-color: #7AC74C;
+    }
+
+    .output #type.electric {
+        border-color: #b9a246;
+        background-color: #F7D02C;
+    }
+
+    .output #type.psychic {
+        border-color: #bd607c;
+        background-color: #F95587;
+    }
+
+    .output #type.ice {
+        border-color: #a1b8b6;
+        background-color: #96D9D6;
+    }
+
+    .output #type.dragon {
+        border-color: #866bc9;
+        background-color: #6F35FC;
+    }
+
+    .output #type.dark {
+        border-color: #443c36;
+        background-color: #705746;
+    }
+
+    .output #type.fairy {
+        border-color: #af909f;
+        background-color: #D685AD;
+    }
+
+    .stat {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 16px;
+    }
+
+    #hp,
+    #attack,
+    #defense {
+        width: 32px;
+        text-align: center;
+    }
+
+    #special-attack,
+    #special-defense {
+        width: 56px;
+        text-align: center;
+    }
+
+    #speed {
+        width: 52px;
+        text-align: center;
+    }
+
+    .output.stats {
+        justify-content: space-between;
+        background-color: #2e6250;
+        border-style: solid;
+        border-color: #1b352b;
+        border-radius: 10px;
+        border-width: 4px;
+        margin-left: -8px;
+        margin-right: -8px;
+        padding: 3px 5px;
+    }
+
+    .output.moves {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .movements {
+        margin-top: 10px;
+        width: 100%;
+        height: 300px;
+        background-color: #2e6250;
+        border-style: solid;
+        border-color: #1b352b;
+        border-radius: 10px;
+        border-width: 4px;
+        margin-left: -8px;
+        margin-right: -8px;
+        padding: 6px 5px;
+        overflow: auto;
+    }
+
+    .movements .move {
+        margin-top: 5px;
+        margin-bottom: 15px;
+        margin-left: 5px;
+    }
+
+    .movements .move:last-child {
+        margin-bottom: 0;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="pokedex left">
+            <div class="top">
+                <div class="lent">
+                    <div>
+                        <div>
+                            <div> </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lent red small">
+                    <div>
+                        <div>
+                            <div> </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lent yellow small">
+                    <div>
+                        <div>
+                            <div> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pokemon">
+                <div class="frame">
+                    <img id="imgPokemon" src="./imgs/pikachu.jpeg" alt="Front Sprite Pokemon">
+                </div>
+                <div class="name">
+                    <div class="data">
+                        <input type="text" id="name">
+                        <label for="name">Nombre Pokemon</label>
+                    </div>
+                    <input type="button" value="BUSCAR" onclick="fetchPokemon();">
+                </div>
+            </div>
+        </div>
+        <div class="pokedex right">
+            <div class="log">
+                <div class="output">
+                    <label for="type">Tipo</label>
+                    <div class="normal" id="type">NA</div>
+                </div>
+                <div class="output stats">
+                    <div class="stat">
+                        <label>PS</label>
+                        <div id="hp">999</div>
+                    </div>
+                    <div class="stat">
+                        <label>ATK</label>
+                        <div id="attack">999</div>
+                    </div>
+                    <div class="stat">
+                        <label>DEF</label>
+                        <div id="defense">999</div>
+                    </div>
+                    <div class="stat">
+                        <label>SP.ATK</label>
+                        <div id="special-attack">999</div>
+                    </div>
+                    <div class="stat">
+                        <label>SP.DEF</label>
+                        <div id="special-defense">999</div>
+                    </div>
+                    <div class="stat">
+                        <label>SPEED</label>
+                        <div id="speed">999</div>
+                    </div>
+                </div>
+                <div class="output moves">
+                    <label>Movimientos</label>
+                    <div class="movements">
+                        <div class="move">Nombre</div>
+                        <div class="move">Nombre</div>
+                        <div class="move">Nombre</div>
+                        <div class="move">Nombre</div>
+                        <div class="move">Nombre</div>
+                        <div class="move">Nombre</div>
+                        <div class="move">Nombre</div>
+                        <div class="move">Nombre</div>
+                        <div class="move">Nombre</div>
+                        <div class="move">Nombre</div>
+                        <div class="move">Nombre</div>
+                        <div class="move">Nombre</div>
+                        <div class="move">Nombre</div>
+                        <div class="move">Nombre</div>
+                        <div class="move">Nombre</div>
+                        <div class="move">Nombre</div>
+                        <div class="move">Nombre</div>
+                        <div class="move">Nombre</div>
+                        <div class="move">Nombre</div>
+                        <div class="move">Nombre</div>
+                        <div class="move">Nombre</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    function fetchPokemon() {
+        const pokeNameInput = document.getElementById("name");
+        let pokeName = pokeNameInput.value;
+        pokeName = pokeName.toLowerCase();
+        const url = `https://pokeapi.co/api/v2/pokemon/${pokeName}`;
+        fetch(url).then(
+            (res) => {
+                if (res.status != "200") {
+                    console.log(res);
+                    pokeImage("./imgs/pikachu.jpeg");
+                }
+                else {
+                    return res.json();
+                }
+            }
+        ).then(
+            (data) => {
+                if (data) {
+                    console.log(data);
+
+                    let pokeImg = data.sprites.front_default;
+                    pokeImage(pokeImg);
+                    console.log(pokeImg);
+
+                    let types = data.types;
+                    pokeType(types);
+                    console.log(types);
+
+                    let stats = data.stats;
+                    pokeStats(stats);
+                    console.log(stats);
+
+                    let moves = data.moves;
+                    pokeMoves(moves);
+                    console.log(moves);
+                } else {
+                    console.log(data);
+                    pokeImage("./imgs/pikachu.jpeg");
+                }
+            }
+        );
+    }
+
+    function pokeMoves(moves) {
+        const output = document.getElementsByClassName("movements")[0];
+        output.innerHTML = "";
+
+        for (let index in moves) {
+            let div = document.createElement("div");
+            div.setAttribute("class", "move");
+            div.innerHTML = moves[index].move.name;
+            output.appendChild(div);
+        }
+    }
+
+    function pokeStats(stats) {
+        const output = document.getElementsByClassName("output")[1];
+        output.innerHTML = "";
+
+        for (let index in stats) {
+            let divStat = document.createElement("div");
+            divStat.setAttribute("class", "stat");
+
+            let label = document.createElement("label");
+            label.innerHTML = chooseStat(stats[index].stat.name);
+            divStat.appendChild(label);
+
+            let div = document.createElement("div");
+            div.setAttribute("id", stats[index].stat.name)
+            div.innerHTML = stats[index].base_stat;
+            divStat.appendChild(div);
+
+            output.append(divStat);
+        }
+    }
+
+    function chooseStat(name) {
+        switch (name) {
+            case "hp": return "PS";
+            case "attack": return "ATK";
+            case "defense": return "DEF";
+            case "special-attack": return "SP.ATK";
+            case "special-defense": return "SP.DEF";
+            case "speed": return "SPEED";
+            default: return "ERROR";
+        }
+    }
+
+    function pokeImage(url) {
+        const pokePhoto = document.getElementById("imgPokemon");
+        pokePhoto.src = url;
+    }
+
+    function pokeType(types) {
+        const output = document.getElementsByClassName("output")[0];
+        output.innerHTML = "";
+
+        var label = document.createElement('label');
+        label.setAttribute("for", "type");
+        label.innerHTML = "Tipo";
+
+        output.appendChild(label);
+
+        for (let index in types) {
+            let div = document.createElement("div");
+            div.setAttribute("class", types[index].type.name);
+            div.setAttribute("id", "type");
+            div.innerHTML = types[index].type.name;
+            output.appendChild(div);
+        }
+    }
+</script>
+
+</html>
