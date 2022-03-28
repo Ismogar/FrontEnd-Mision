@@ -1,25 +1,32 @@
 <template>
   <div class="home">
     <div class="formEntry">
-      <Formulario />
+      <cakes-amount />
     </div>
-    <aboutInfo />
+    <div class="formEntry">
+      <adornos-amount />
+    </div>
+    <div class="formEntry">
+      <PedidosInfo />
+    </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import aboutInfo from "@/components/aboutInfo.vue";
-import Formulario from "../components/Formulario.vue"
+import AdornosAmount from "../components/AdornosAmount.vue";
+import CakesAmount from "../components/CakesAmount.vue";
+import PedidosInfo from "../components/PedidosInfo.vue";
 
 export default {
-  name: "HomeView",
+  name: "PasteleroView",
   components: {
-    aboutInfo,
-    Formulario,
+    AdornosAmount,
+    CakesAmount,
+    PedidosInfo,
   },
 };
 </script>
+    CakeOptionAmount
 
 <style>
 .home {
