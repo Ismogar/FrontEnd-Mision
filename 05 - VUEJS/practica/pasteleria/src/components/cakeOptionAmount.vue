@@ -14,7 +14,7 @@ export default {
   props: {
     image: String,
     flavor: String,
-    amount: Number,
+    amount: String,
   },
 };
 </script>

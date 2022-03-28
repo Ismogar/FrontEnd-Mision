@@ -1,6 +1,6 @@
 <template>
   <label class="option">
-    <input type="checkbox" />
+    <input type="checkbox" :id="inputID"/>
     <img :src="image" />
     <div class="details">
       {{ flavor }}
@@ -16,8 +16,10 @@ export default {
     image: String,
     flavor: String,
     price: String,
+    inputID: String,
   },
 };
+
 </script>
 
 <style scoped>

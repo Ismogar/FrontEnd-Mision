@@ -7,6 +7,7 @@
       <adornos-amount />
     </div>
     <div class="formEntry">
+      <div class="title">Datos de Pedidos</div>
       <PedidosInfo />
     </div>
   </div>
@@ -26,7 +27,6 @@ export default {
   },
 };
 </script>
-    CakeOptionAmount
 
 <style>
 .home {
